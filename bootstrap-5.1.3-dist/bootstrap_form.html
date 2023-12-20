@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<title>layout 3</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body class="bg-dark">
+<div style=" display:flex; justify-content:center;">
+<div class=" border border-3  bg-primary mt-5" style="height:650px;   width:40%; padding:29px;">
+<div>
+<h2  class="text-center fw-bold text-danger"style=" font-size:50px; font-family:cambria;  ">Form</h2>
+</div>
+<form>
+<div>
+<label class="form-label fw-bold fs-5" for="First">First name:</label>
+<input type="text" class="form-control" id="First" placeholder="Enter your first name" required>
+<div>
+
+</div>
+</div>
+
+<div>
+<label class="form-label fw-bold fs-5" for="last">last name:</label>
+<input type="text" class="form-control" id="last" placeholder="Enter your last name " required>
+</div>
+
+<div>
+<label class="form-label fw-bold fs-5" for="Email">Email:</label>
+<input class="form-control" type="email" id="Email" placeholder="Enter your email id " required>
+</div>
+
+<div>
+<label class="form-label fw-bold fs-5"  for="password">Password:</label>
+<input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+</div>
+
+<div>
+<label class="form-label fw-bold fs-5" >Gender</label>
+<input type="radio" class="form-check-input"  name="gender"required> Male
+<input type="radio" class="form-check-input"  name="gender"required> Female
+</div>
+
+<div>
+<label class="form-label fw-bold fs-5" for="Range">Range:<label>
+<input class="form-range" type="range" id="Range" style="width:400px;" required>
+</div>
+
+<div>
+<label class="form-label fw-bold fs-5" for="file">File:</label>
+<input class="form-control" type="file" id="file" required>
+</div>
+
+<div>
+<label class="form-label fw-bold fs-5" for="courses:">courses</label>
+<input class="form-contol" id="courses" list="dropdown" required>
+<datalist id="dropdown">
+<option>select</option>
+<option>english</option>
+<option>hindi</option>
+<option>math</option>
+<option>science</option>
+</datalist>
+</div>
+
+<div>
+<button type="submit" class=" bg-danger text-light fw-bold fs-5" style="width:100%"> Submit Form </button>
+</div>
+
+</form>
+</div>
+</div>
+
+<script href="bootstrap.js"></script>
+<script href="bootstrap.min.js"></script>
+</body>
+</html>

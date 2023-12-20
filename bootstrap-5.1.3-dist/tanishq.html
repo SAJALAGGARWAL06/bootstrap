@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>tanishq</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    .mynav a {
+      color: black !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mynav">
+
+    <nav>
+      <div class="container-fluid " style="background-color: #f2e9e9;">
+        <div class="container">
+          <div class="row p-3">
+            <div class="col-1">
+              <img class="img-fluid" style="height: 50px !important;"
+                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTQuODMgNzQuNzkiPjxkZWZzPjxzdHlsZT4uYntmaWxsOiM4MzI3Mjk7ZmlsbC1ydWxlOmV2ZW5vZGQ7fTwvc3R5bGU+PC9kZWZzPjxwYXRoIGNsYXNzPSJiIiBkPSJNMzguNzksNy41NWMtLjYyLTIuOTEsMS4zMi01LjU2LDQuMTUtNS41Nmg3Ljk1YzIuMTIsLjA5LDQuNzctMS41OSw0Ljc3LTEuNTlWMTMuNzNjMCwxMy41MS03LjQyLDE5LjI0LTEwLjg2LDE5Ljc3LS42MiwuMjctMS4wNiwuMDktLjI2LS41Myw0LjY4LTMsNy40Mi0xMC4xNSw3LjY4LTE2LjI0VjQuNTVjLS45NywuNjItMi44MiwuNzEtMi44MiwuNzFoLTYuOTdjLTEuODUsMC0yLjgyLC42Mi0zLjYyLDIuMjltMzUuNTgsMGMuNjItMi45MS0xLjI0LTUuNTYtNC4xNS01LjU2aC03Ljk1Yy0yLjAzLC4wOS00Ljc3LTEuNTktNC43Ny0xLjU5VjEzLjczYzAsMTMuNTEsNy40MiwxOS4yNCwxMC44NiwxOS43NywuNjIsLjI3LDEuMDYsLjA5LC4yNy0uNTMtNC42OC0zLTcuNDItMTAuMTUtNy42OC0xNi4yNFY0LjU1Yy45NywuNjIsMi44MiwuNzEsMi44MiwuNzFoNy4wNmMxLjg1LDAsMi44MywuNjIsMy41MywyLjI5aDBaTTIwLjI2LDYyLjk5Yy0uNzEtMS43Ny0uMTgtMy43MSwuMjYtNC40MWg4LjAzdjQuNDFoMi4wM3YtMTkuNTFzLS42Mi0uMDktMS4wNiwuNjJjLTMsNC43Ny01LjMsNi04LjY1LDkuMzYtMi44MywyLjgyLTQuOTQsNi0zLjg5LDkuNTNoMy4yN1ptLjg4LTUuNzRoNy40MnYtOC4zOWMtMS44NSwzLjQ0LTYuMjcsNS4zLTcuNDIsOC4zOVptODQuOTMtMTUuOGMtMi41NiwyLjAzLTQuNjgsMy44LTUuODMsNi40NC0xLjI0LDIuNjUtMS41OSw2LjQ0LDAsOS43MSwxLjc3LDMuNjIsMy44LDUuNTYsNi4xOCw3Ljk0LDEuNjgsMS44NSw0Ljg2LDUuNTYsMy44LDguODMsLjc5LDAsMS44NS0xLjk0LDIuMDMtMi42NSwuNDQtMi4yOSwuMTgtMy40NC0uNzktNS4xMi0uNjItMS4xNS0xLjk0LTIuMjktMi45MS0zLjQ0LDEuNDEtMS4xNSwyLjkxLTIuODMsNC4xNS00LjUsMS41OS0yLjIxLDIuNTYtNS45MSwuNTMtOS41My0xLjg1LTMuNDQtNy4wNi02LjYyLTcuMTUtNy42OGgwWm0xLjA2LDIwLjM5Yy0yLjAzLTEuNjgtMy4yNy0zLjA5LTQuNS01LjgzLTEuMjQtMi40Ny0xLjMyLTUuMzktLjc5LTcuNDIsLjYyLTIuMjEsMi4xMi0zLjgsMy41My00Ljk0LDEuNTksMS4xNSwzLjI3LDIuNTYsNC41LDQuNTksMi4wMywzLjQ0LDIuMDMsNS45MSwuNzEsOS4yNy0uNzksMS45NC0xLjY4LDMuMDktMy40NCw0LjMzaDBaTS41Nyw0NS4wN2MtLjM1LS43MSwuMTgtMi41NiwyLjMtMi4zOEgxMy4yOGMxLjMyLC4wOSwyLjEyLS44OCwzLjgtLjcxLTIuMzgsMS45NC0yLjY1LDIuOTEtMy4wOSw0Ljc3bC0xLjY4LDEzLjY4Yy0uNDQsNS41NiwxLjE1LDEwLjE1LDUuMywxMy45NS0yLjU2LC4zNS04LjEyLTMuNzEtOC4zLTExLjEyLS4xOC0zLjcxLC44OC0xNS41NCwuODgtMTUuNTQsLjI2LTEuOTQsMS41LTMuMzUsMS41LTMuMzVIMS44Yy0uNjIsLjA5LS45NywuMDktMS4yNCwuNzFILjU3Wm04MS44NCwxNy4zOWgyLjU2di01LjIxaDYuOTd2NS40N2gyLjY1di0xOC44OWgtMi42NXYxMS45MmgtNi45N3YtMTEuOTJoLTIuNTZ2MTguNjNoMFptLTcuMTUtMTQuMjFjLS42MiwuMTgtMS4yNC0uMDktMS44NS0uNjItLjg4LS43OS0xLjI0LTEuNTktMi4zOC0yLjI5LTEuMjQtLjYyLTMtLjcxLTQuMDYsLjA5LS45NywuNzEtLjk3LDIuMywuMDksMy4xOCwyLjAzLDEuNTksNC4yNCwyLjQ3LDYuOCwzLjgsNC42OCwyLjQ3LDUuNDcsNi44LDIuMjEsOS0yLjc0LDEuODUtNi4xOCwyLjAzLTkuMjcsLjg4LTIuMzgtLjk3LTQuMjQtMi45MS00LjUtNS4zLDEuNTksMCwyLjEyLC43MSwyLjc0LDEuNjgsLjk3LDEuMzIsMS41OSwxLjg1LDMsMi40NywyLjAzLC43OSw0LjMzLC41Myw1LjY1LS4yNiwxLjk0LTEuMjQsMS42OC0zLjI3LC4yNi00LjU5LTIuOTEtMi43NC02LjUzLTMuNTMtOC41Ni01LjU2LTEuNzctMS43Ny0yLjM4LTMuNzEtLjUzLTUuNzQsMS41OS0xLjY4LDUuODMtMi4yMSw4LjMtLjA5LDEuMDYsLjk3LDEuODUsMi4xMiwyLjEyLDMuMzVoMFptLTIxLjEtMTAuMDZjMC0xLjQxLDEuMDYtMi40NywyLjQ3LTIuNDcsMS4yNCwwLDIuMzgsMS4wNiwyLjM4LDIuNDcsMCwxLjMyLTEuMTUsMi40Ny0yLjM4LDIuNDctMS40MSwwLTIuNDctMS4xNS0yLjQ3LTIuNDdabTEuMTUsNS42NWgyLjQ3djE5LjE2aC0yLjQ3di0xOS4xNlptLTE5LjI1LDE5LjE2aDEuNzd2LTEzLjE1Yy44OCwyLjU2LDUuMjEsNS45Miw1LjIxLDUuOTIsMCwwLDMuMzUsMi44Myw0Ljk0LDYuNzFsMS4wNiwuNTN2LTE5LjE2aC0xLjc3djEzLjQyYy0uOTctMi41Ni00Ljc3LTUuNTYtNC43Ny01LjU2LTIuOTEtMi41Ni00Ljg2LTYuMDktNS4zLTcuNzdsLTEuMTUtLjM1djE5LjQyaDBaIi8+PC9zdmc+"
+                alt="">
+            </div>
+            <div class="col-8">
+              <div>
+                <form>
+                  <input class="form-control" style="height: 50px;" type="search" placeholder="Search"
+                    aria-label="Search">
+                </form>
+              </div>
+            </div>
+            <div class="col-3">
+              <div style="display: flex; justify-content: space-around;">
+                <div><img class="img-fluid" style="height: 40px !important;" src="myphotos/stores.svg" alt=""></div>
+                <div><img class="img-fluid" style="height: 40px !important;" src="myphotos/account.svg" alt=""></div>
+                <div><img class="img-fluid" style="height: 40px !important;" src="myphotos/wishlist.svg" alt=""></div>
+                <div><img class="img-fluid" style="height: 40px !important;" src="myphotos/cart.svg" alt=""></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item px-2">
+                    <a class="nav-link" href="#">ALL JEWELLERY</a>
+                  </li>
+                  <li class="nav-item px-2">
+                    <a class="nav-link" href="#">GOLD
+                    </a>
+                  </li>
+                  <li class="nav-item px-2">
+                    <a class="nav-link" href="#">DIAMOND</a>
+                  </li>
+                  <li class="nav-item px-2">
+                    <a class="nav-link" href="#">EARRINGS</a>
+                  </li>
+                  <li class="nav-item px-2">
+                    <a class="nav-link" href="#">RINGS</a>
+                  </li>
+                  <li class="nav-item px-2">
+                    <a class="nav-link" href="#">MIA</a>
+                  </li>
+                  <li class="nav-item px-2">
+                    <a class="nav-link" href="#">COLLECTIONS</a>
+                  </li>
+                  <li class="nav-item px-2">
+                    <a class="nav-link" href="#">RIVAAH</a>
+                  </li>
+                  <li class="nav-item px-2">
+                    <a class="nav-link" href="#">GOLDEN HARVEST</a>
+                  </li>
+                  <li class="nav-item px-2">
+                    <a class="nav-link" href="#">CORPORATE GIFTING</a>
+                  </li>
+                  <li class="nav-item px-2">
+                    <a class="nav-link" href="#">MORE</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="mycarausal">
+    <div class="container-fluid">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="myphotos/carausal1.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="myphotos/carausal2.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="myphotos/carausal3.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true" style="    background-color: black;
+                      border: 3px solid black;"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true" style="    background-color: black;
+                      border: 3px solid black;"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div class="row mt-2">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12">
+            <div style=" text-align: center; color:#832729; font-family: Nunito Sans,sans-serif!important;">
+              <h2 style="font-size: 40px; font-weight: bold;">Shop Jewellery By Category</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div style=" text-align: center; ">
+              <p style="font-size:15px; font-family: Nunito Sans,sans-serif!important; ">Browse through your
+                favourite categories. We've got them all!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-2" style="display: flex; ">
+            <div class="card">
+              <img src="myphotos/GoldCoin.webp" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title text-danger" style="font-size: 15px; font-weight: bold;">Gold Coins</h5>
+                <h2 style="font-size: 15px; padding-top: 10px;">Explore</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="card">
+              <img src="myphotos/Earrings.webp" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title text-danger" style="font-size: 15px; font-weight: bold;">Earings</h5>
+                <h2 style="font-size: 15px; padding-top: 10px;">Explore</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="card">
+              <img src="myphotos/Pendant.webp" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title text-danger" style="font-size: 15px; font-weight: bold;">Pendants</h5>
+                <h2 style="font-size: 15px; padding-top: 10px;">Explore</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="card">
+              <img src="myphotos/Ring.webp" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title text-danger" style="font-size: 15px; font-weight: bold;">Finger Rings</h5>
+                <h2 style="font-size: 15px; padding-top: 10px;">Explore</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="card">
+              <img src="myphotos/Mangalsutra.webp" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title text-danger" style="font-size: 15px; font-weight: bold;">Mangalsutras</h5>
+                <h2 style="font-size: 15px; padding-top: 10px;">Explore</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="card">
+              <img src="myphotos/Neckwear.webp" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title text-danger" style="font-size: 15px; font-weight: bold;">Neckwear</h5>
+                <h2 style="font-size: 15px; padding-top: 10px;">Explore</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3 d-flex">
+          <div class="col-2">
+            <div class="card">
+              <img src="myphotos/CoupleRing.webp" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title text-danger" style="font-size: 15px; font-weight: bold;">Engagement Rings</h5>
+                <h2 style="font-size: 15px; padding-top: 10px;">Explore</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="card">
+              <img src="myphotos/Chain.webp" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title text-danger" style="font-size: 15px; font-weight: bold;">chains</h5>
+                <h2 style="font-size: 15px; padding-top: 10px;">Explore</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="card">
+              <img src="myphotos/Bangle.webp" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title text-danger" style="font-size: 15px; font-weight: bold;">Bangles</h5>
+                <h2 style="font-size: 15px; padding-top: 10px;">Explore</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="card">
+              <img src="myphotos/Bracelet.webp" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title text-danger" style="font-size: 15px; font-weight: bold;">bracelets</h5>
+                <h2 style="font-size: 15px; padding-top: 10px;">Explore</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="card">
+              <img src="myphotos/NosePin.webp" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title text-danger" style="font-size: 15px; font-weight: bold;">nose Pins</h5>
+                <h2 style="font-size: 15px; padding-top: 10px;">Explore</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="card">
+              <img src="myphotos/PendantSet.webp" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title text-danger" style="font-size: 15px; font-weight: bold;">pendants set</h5>
+                <h2 style="font-size: 15px; padding-top: 10px;">Explore</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12">
+            <div style=" text-align: center; color:#832729; font-family: Nunito Sans,sans-serif!important;">
+              <h2 style="font-size: 40px; font-weight: bold;">Shop by Collection</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div style=" text-align: center; ">
+              <p style="font-size:15px; font-family: Nunito Sans,sans-serif!important;">Whatever the occasion, we've got
+                a beautiful piece of jewellery for you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row d-flex">
+      <div class="col-4">
+        <div class="card">
+          <img src="myphotos/nyusha.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-danger fw-bold">Nyusha <p style="float: right; color: black; font-size: 15px;">
+                Explore</p>
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card">
+          <img src="myphotos/evileyejewellery.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-danger fw-bold">Evil Eyes <p
+                style="float: right; color: black; font-size: 15px;">
+                Explore</p>
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card">
+          <img src="myphotos/dor.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-danger fw-bold">Dor <p style="float: right; color: black; font-size: 15px;">
+                Explore</p>
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5 border border-1"
+      style=" padding-bottom: 30px; border-radius: 10px; background-image:url(https://i.pinimg.com/736x/4f/98/ad/4f98ad07b7e9d1190a30cb6e41d0a8e8.jpg) ;">
+      <div class="col-4">
+      </div>
+      <div class="col-8 mt-5">
+        <div style="font-weight:300px; font-family: algerian; color: white;">
+          <p style="font-size: 50px; margin:0px; padding:0px; text-align: center;">Gift the perfect sparkle </p>
+          <p style="font-size: 50px; margin:0px; padding:0px; text-align: center;">to your loved ones </p>
+          <p style="font-size: 20px; margin:0px; padding-top:30px; text-align: center;"> <i> Tanishq's gifting range,
+            </i></p>
+          <p style="font-size: 20px; margin:0px; padding:0px; text-align: center;"> <i> starting @10,000</i></p>
+          <button type="submit" class=" btn btn-light" style="margin-left: 160px;">Explore Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12">
+            <div style=" text-align: center; color:#832729; font-family: Nunito Sans,sans-serif!important;">
+              <h2 style="font-size: 40px; font-weight: bold;">New For You!</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div style=" text-align: center; ">
+              <p style="font-size:15px; font-family: Nunito Sans,sans-serif!important;">Our latest releases, just for
+                you!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        <div
+          style=" border:1px solid white ; border-radius: 10px; background-image: url(myphotos/aveer.jpg); text-align: center; padding-top: 340px; padding-bottom: 30px; ">
+          <input type="submit" value="Explore More" class=" btn btn-light text-danger border border-2 border-danger">
+        </div>
+      </div>
+      <div class="col-4 ">
+        <div
+          style=" border:1px solid white ; text-align: center;  border-radius: 10px; background-image: url(myphotos/alekhya.jpg); padding-top: 340px; padding-bottom: 30px; ">
+          <input type="submit" value="Explore More" class=" btn btn-light text-danger border border-2 border-danger">
+        </div>
+      </div>
+      <div class="col-4 ">
+        <div
+          style=" border:1px solid white ; text-align: center;  border-radius: 10px; background-image: url(myphotos/kids.jpg); padding-top: 340px; padding-bottom: 30px; ">
+          <input type="submit" value="Explore More" class=" btn btn-light text-danger border border-2 border-danger">
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12">
+            <div style=" text-align: center; color:#832729; font-family: Nunito Sans,sans-serif!important;">
+              <h2 style="font-size: 40px; font-weight: bold;">Shop by Gender</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div style=" text-align: center; ">
+              <p style="font-size:15px; font-family: Nunito Sans,sans-serif!important;">Explore our latest designs
+                curated
+                just for you!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row d-flex">
+      <div class="col-4">
+        <div class="card">
+          <img src="myphotos/Woman.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-danger fw-bold">Women <p style="float: right; color: black; font-size: 15px;">
+                Explore</p>
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card">
+          <img src="myphotos/Men.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-danger fw-bold">Men <p style="float: right; color: black; font-size: 15px;">
+                Explore</p>
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card">
+          <img src="myphotos/kid.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-danger fw-bold">kids <p style="float: right; color: black; font-size: 15px;">
+                Explore</p>
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5 " style="margin-bottom: 20px;">
+      <div class="col-12">
+        <div
+          style="  border:1px solid white ; border-radius: 10px; background-image: url(myphotos/miahompagedesktopete.avif); text-align: center; padding-top: 400px; padding-bottom: 30px; ">
+          <input type="submit" value="Explore More" class=" btn btn-light text-danger border border-2 border-danger">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 ">
+        <div style=" display:flex; border:1px solid purple ; border-radius: 10px;">
+          <img src="myphotos/Rivaah-Bride.jpg" alt="">
+          <img src="myphotos/rivah_D.avif" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12">
+            <div style=" text-align: center; color:#832729; font-family: Nunito Sans,sans-serif!important;">
+              <h2 style="font-size: 40px; font-weight: bold;">Jewellery Guides</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div style=" text-align: center; ">
+              <p style="font-size:15px; font-family: Nunito Sans,sans-serif!important;">Check out our ready made guides
+                to make your buying easier.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-6">
+        <div class="card p-4" style=" border:3px solid red;  background-image: url(myphotos/Earrings.webp );
+           background-repeat: no-repeat; background-position: right center; background-size: cover;">
+          <h4 class="text-danger fw-bold mb-3" style="padding-top: 120px;">Find Your Ring Size</h4>
+
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="card p-4" style=" border: 3px solid red; background-image: url(myphotos/Bangle.webp );
+           background-repeat: no-repeat; background-position: right center; background-size: cover;">
+          <h4 class="text-danger fw-bold mb-3" style="padding-top: 120px;">The Jewellery Care Guide</h4>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="container-fluid" style="background-color: #f2e9e9;">
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <div>
+              <h2 style="color:darkred; font-size: 25px; font-weight: bold; padding-top: 80px; ">Useful Links</h2>
+              <h2 style="font-size: 20px; padding-top: 40px;">Delivery Information</h2>
+              <h2 style="font-size: 20px; padding-top: 20px;"> International Shipping</h2>
+              <h2 style="font-size: 20px; padding-top: 20px;">Payment Options</h2>
+              <h2 style="font-size: 20px; padding-top: 20px;">Track Your Order </h2>
+              <h2 style="font-size: 20px; padding-top: 20px;">Returns</h2>
+              <h2 style="font-size: 20px; padding-top: 20px;"> Find a Store</h2>
+            </div>
+          </div>
+          <div class="col-3">
+            <div>
+              <h2 style="color:darkred; font-size: 25px; font-weight: bold; padding-top: 80px; ">Information</h2>
+              <h2 style="font-size: 20px; padding-top: 40px;">Careers</h2>
+              <h2 style="font-size: 20px; padding-top: 20px;">Blog</h2>
+              <h2 style="font-size: 20px; padding-top: 20px;">Offers & Contant Details</h2>
+              <h2 style="font-size: 20px; padding-top: 20px;">Help & FAQS</h2>
+              <h2 style="font-size: 20px; padding-top: 20px;">About Tanishq</h2>
+            </div>
+          </div>
+          <div class="col-3">
+            <div>
+              <h2 style="color:darkred; font-size: 25px; font-weight: bold; padding-top: 80px; ">Contact Us</h2>
+              <h2 style="padding-top: 40px; font-size: 22px;"><img src="myphotos/tanishq_contactUs_1.svg" height="30px"
+                  style="padding-right: 20px;">Write
+                to Us</h2>
+              <h2 style="padding-top: 20px; font-size: 22px;"><img src="myphotos/tanishq_contactUs_2.svg" height="30px"
+                  style="padding-right: 30px;">1800-266-0123</h2>
+              <h2 style="padding-top: 20px; font-size: 22px;"><img src="myphotos/tanishq_contactUs_3.svg" height="30px"
+                  style="padding-right: 30px;">Chat with Us
+              </h2>
+            </div>
+          </div>
+          <div class="col-3">
+            <div>
+              <h2 style=" font-size: 20px; padding-top: 80px; ">Download the Tanishq App Now</h2>
+              <div style="display: flex; padding-top: 30px;">
+                <img src="myphotos/apple.svg" height="100px" style="padding-right: 10px;">
+                <img src="myphotos/google-play.svg" height="100px">
+              </div>
+              <div>
+                <h2 style="font-size: 20px; font-weight:bold;"></h2>Follow Us On</h2>
+                <img src="myphotos/facebook.svg" height="50px" style="padding: 15px;">
+                <img src="myphotos/twitter.svg" height="50px" style="padding: 15px;">
+                <img src="myphotos/instagram.svg" height="50px" style="padding: 15px;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script href="bootstrap.js"></script>
+  <script href="bootstrap.min.js"></script>
+</body>
+
+</html>
